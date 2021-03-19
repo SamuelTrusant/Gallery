@@ -11,6 +11,7 @@ Podemos desplazarnos por la escena usando las teclas 'w' 'a' 's' 'd' y moviendo 
 
 ## Vista del programa funcionando
 
+![](export.gif)
 
 ## Trabajo realizado
 Empecé con la idea de hacer una galería de arte e ir poniendo distintos objetos. Estuve probando distintas combinaciones de luces y por casualidad conseguí unas luces que actuaban como si fueran el reflejo de una pantalla y se me ocurrió poner las pantallas en el centro. Originalmente tenía un foco en cada esquina de la escena para iluminar pero parece ser que processing solo puede generar 8 luces simultáneas así que para poder tener lo de las pantallas cambié las 4 luces por luz ambiente.
