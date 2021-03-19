@@ -15,7 +15,7 @@ boolean w,a,s,d = false;
 float speed = 8;
 
 //objetos escena
-PShape galery,jupiter,tanque,david;
+PShape galery,jupiter,david;
 PImage grito,gioconda,jupiterT,pared,madera,mar,selva,lava;
 
 //movimiento júpiter
@@ -85,28 +85,45 @@ void draw ( ) {
     spotLight(141, 52, 106, 0, 0, 0, 0, 0, -1, PI/2, 3);
   }
 
-
+  fill(250);
   createRoom(wall,roof,bottom, 0, camHeight - roof/2, 0, pared);
   createRoom(centerSize,roof,centerSize,0, -100, 0, pared);
 
+  fill(0);
   pushMatrix();
   translate(wall-0.1,0,0);
   rotateY(radians(-90));
     textSize(30);
     textAlign(CENTER);
-    //fill(50);
     text("Bienvenido a la galería.\nPara moverte, usa las teclas 'w' 'a' 's' 'd'.\nPara mover la camara mantén pulsado cualquier botón del ratón y arrastra.", 0, 0, 0);
   popMatrix();
   
   pushMatrix();
-  translate(0,0,wall-0.1);
+  translate(0,0,bottom-0.1);
   rotateY(radians(180));
     textSize(30);
     textAlign(CENTER);
     //fill(50);
-    text("pulsa 'l' para apagar las luces.", 0, 0, 0);
+    text("pulsa 'l'", 0, 0, 0);
   popMatrix();
 
+  fill(240);
+  pushMatrix();
+  translate(300,0,bottom-0.1);
+  rotateY(radians(180));
+    textSize(30);
+    textAlign(CENTER);
+    //fill(50);
+    text("para apagar las luces", 0, 0, 0);
+  popMatrix();
+  
+  pushMatrix();
+  translate(-wall/2,-roof/2,-bottom+0.1);
+    textSize(30);
+    textAlign(CENTER);
+    //fill(50);
+    text("mensaje secreto", 0, 0, 0);
+  popMatrix();
   /*
   pushMatrix();
     //emissive(200, 200, 200);
