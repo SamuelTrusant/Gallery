@@ -1,3 +1,8 @@
+//import gifAnimation.*;
+
+//int framesGif = 0;
+//GifMaker gifExport;
+
 //medidas sala
 float wall = 2000;
 float roof = 600;
@@ -40,14 +45,9 @@ void setup(){
   jupiter.setStroke(255);
   jupiter.setTexture(jupiterT);
   endShape (CLOSE) ;
-  /*
-  stroke(0);
-  beginShape ( ) ;
-  galery = createShape (SPHERE,sunr);
-  galery.setStroke(255);
-  galery.setTexture(img);
-  endShape (CLOSE) ;
-  */
+  
+  //gifExport = new GifMaker(this, "export.gif");
+  //gifExport.setRepeat(0);
 }
 
 void draw ( ) {
@@ -55,29 +55,10 @@ void draw ( ) {
   background( 0 ) ;
   
   camera(camPos[0], camPos[1], camPos[2], camPos[0] + dirPos[0], camPos[1] + dirPos[1], camPos[2] + dirPos[2], 0, 1, 0); 
-  
-  //spotLight(250, 250, 250, wall - 150, -tall/2, bottom -150, 0,1,0,90, 600);
-
-  //lights();
-  //directionalLight(51, 102, 126, 0, 0, 1);
-  //spotLight(51, 102, 250, wall - 100, 0, bottom - 100, 1, 0, 0, PI/2, 1);
   ambientLight(50, 50, 50);
 
   if(!lightsOff){
-    //ambientLight(50, 50, 50);
     ambientLight(150, 150, 150);
-
-    /*
-    //ESTA ES LA OPCIÓN BUENA, CON SOLO DOS PUNTOS OPUESTOS
-    spotLight(100, 100, 100, 0, 0, 0, 1, 0, 0, PI/2, 1);
-    spotLight(100, 100, 100, 0, 0, 0, -1, 0, 0, PI/2, 1);
-    spotLight(100, 100, 100, 0, 0, 0, 0, 0, -1, PI/2, 1);
-    spotLight(100, 100, 100, 0, 0, 0, 0, 0, 1, PI/2, 1);
-    */
-    //pointLight(80, 80, 80, wall + 150, 0, bottom - 150);
-    //pointLight(80, 80, 80, -wall + 150, 0, bottom - 150);
-    //pointLight(80, 80,80, -wall + 150, 0, -bottom + 150);
-    //pointLight(80, 80, 80, wall - 150, 0, -bottom + 150);
 
   } else {
     spotLight(51, 106, 146, 0, 0, 0, 1, 0, 0, PI/2, 3);
@@ -95,23 +76,22 @@ void draw ( ) {
   rotateY(radians(-90));
     textSize(30);
     textAlign(CENTER);
-    text("Bienvenido a la galería.\nPara moverte, usa las teclas 'w' 'a' 's' 'd'.\nPara mover la camara mantén pulsado cualquier botón del ratón y arrastra.", 0, 0, 0);
+    text("Bienvenido a la galería.\nPara moverte, usa las teclas 'W' 'A' 'S' 'D'.\nPara mover la camara mantén pulsado cualquier botón del ratón y arrastra.", 0, 0, 0);
   popMatrix();
   
   pushMatrix();
   translate(0,0,bottom-0.1);
   rotateY(radians(180));
-    textSize(30);
+    textSize(60);
     textAlign(CENTER);
-    //fill(50);
-    text("pulsa 'l'", 0, 0, 0);
+    text("pulsa 'L'", 0, 0, 0);
   popMatrix();
 
   fill(240);
   pushMatrix();
-  translate(300,0,bottom-0.1);
+  translate(500,0,bottom-0.1);
   rotateY(radians(180));
-    textSize(30);
+    textSize(60);
     textAlign(CENTER);
     //fill(50);
     text("para apagar las luces", 0, 0, 0);
@@ -124,25 +104,12 @@ void draw ( ) {
     //fill(50);
     text("mensaje secreto", 0, 0, 0);
   popMatrix();
-  /*
-  pushMatrix();
-    //emissive(200, 200, 200);
-    shininess(100);
-    translate(0, camHeight - tall/2,0);
-    texture(paredBlanca);
-    box(wall*2, tall, bottom*2);
-  popMatrix();
-  */
-  //pointLight(255, 255, 255, -wall+0.1,0,0);
 
   pushMatrix();
-  //spotLight(255, 255, 255, -wall + 50 ,160,0, -0.5, 0.5, 0, 90, 1);
-
   translate(-wall+0.1,0,0);
   rotateY(radians(90));
     stroke(0);
     textureMode(NORMAL);
-    //shininess(100);
 
     beginShape();
     texture(grito);
@@ -157,8 +124,7 @@ void draw ( ) {
   translate(0,-50,-bottom+0.1);
     stroke(0);
     textureMode(NORMAL);
-    //shininess(100);
-
+    
     beginShape();
     texture(gioconda);
     vertex(-100, -100, 0, 0, 0);
@@ -168,23 +134,6 @@ void draw ( ) {
     endShape();
   popMatrix();
 
-/*
-  pushMatrix();
-    rotateX(radians(360*mouseX/width));
-    rotateY(radians(360*mouseY/height));
-    textureMode(NORMAL) ;
-    beginShape(TRIANGLE_STRIP ) ;
-    texture(gioconda);
-    vertex(-100, -300, 0, 0, 0);
-    vertex(100, -300, 0, 1, 0);
-    vertex(-100, -100, 0 , 0 , 1 ) ;
-    vertex(100, -100, 0, 1, 1);
-    vertex(-100, 100, 0, 0, 0);
-    vertex(100, 100, 0, 1, 0);
-    endShape();
-  popMatrix();
-  */
-  //pointLight(250, 250, 250, wall - 150, -tall/2, bottom -150);
   pushMatrix();
     translate(wall - 5 * jupiterr/4, 0, bottom - 5 * jupiterr/4);
     rotateY(radians(jupiterSpeed));
@@ -199,10 +148,6 @@ void draw ( ) {
     scale(1.5);
     shape(david);
   popMatrix();  
-  
-  
-  //pointLight(100, 100, 100, 0, 0, 0);
-
 
   //pantalla mar
   pushMatrix();
@@ -212,7 +157,6 @@ void draw ( ) {
     rotateY(radians(90));
     stroke(0);
     textureMode(NORMAL);
-    //shininess(100);
 
     beginShape();
     texture(mar);
@@ -231,7 +175,6 @@ void draw ( ) {
     translate(0, 0,centerSize+0.1);
     stroke(0);
     textureMode(NORMAL);
-    //shininess(100);
 
     beginShape();
     texture(selva);
@@ -249,7 +192,6 @@ void draw ( ) {
     translate(0, 0,-centerSize-0.1);
     stroke(0);
     textureMode(NORMAL);
-    //shininess(100);
 
     beginShape();
     texture(lava);
@@ -263,6 +205,14 @@ void draw ( ) {
   //temas de movimiento
   move();
   jupiterSpeed =  (jupiterSpeed >= 360)? 0 : jupiterSpeed + 0.5;
+  
+  /*
+  if(framesGif > 4){
+    gifExport.addFrame();
+    framesGif = 0;
+  }
+  framesGif++;
+  */
 }
 
 void createRoom(float x, float y, float z, float posx, float posy, float posz, PImage pared) {
@@ -282,8 +232,6 @@ void createRoom(float x, float y, float z, float posx, float posy, float posz, P
   vertex(-x, -y, -z, 0, 1);
   vertex(-x, y, -z, 0, 0);
   vertex(x, y, -z, 1, 0);
-
-  
 
   // -Y "top" face
   vertex(-x, -y, -z, 1, 1);
@@ -368,49 +316,51 @@ void move(){
 }
   
 void keyPressed(){
-  /*if(key == 's'){
-    gifExport.finish();
-  }*/
-  
   switch(key){
-    /*case 'b':
-      //gifExport.finish();
+    /*
+    case 'b':
+      gifExport.finish();
       break;
     */
     case 'w':
+    case 'W':
       w = true;
       break;
     case 's':
+    case 'S':
       s = true;
       break;
     case 'a':
+    case 'A':
       a = true;
       break;
     case 'd':
+    case 'D':
       d = true;
       break;  
     case 'l':
+    case 'L':
       lightsOff = !lightsOff;
       break;
   }
 }  
   
 void keyReleased(){
-  /*if(key == 's'){
-    gifExport.finish();
-  }*/
-  
   switch(key){
     case 'w':
+    case 'W':
       w = false;
       break;
     case 's':
+    case 'S':
       s = false;
       break;
     case 'a':
+    case 'A':
       a = false;
       break;
     case 'd':
+    case 'D':
       d = false;
       break;
   }
