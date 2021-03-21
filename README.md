@@ -7,7 +7,7 @@ Autor: Samuel Trujillo Santana
 En este programa creamos una escena con diversos objetos, texturas y luces.
 
 ## Funcionamiento
-Podemos desplazarnos por la escena usando las teclas 'w' 'a' 's' 'd' y moviendo la cámara al mantener un botón del ratón pulsado y arrastrando. También podemos pulsar 'l' para apagar las luces.
+Podemos desplazarnos por la escena usando las teclas 'w' 'a' 's' 'd' y moviendo la cámara al mantener un botón del ratón pulsado y arrastrando. También podemos pulsar 'L' para apagar las luces.
 
 ## Vista del programa funcionando
 
